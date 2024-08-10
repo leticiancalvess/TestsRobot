@@ -14,6 +14,7 @@ Open the browser
     Maximize Browser Window
 
 Close the browser
+    Capture Page Screenshot
     Close Browser
 # Test Case 01
 Access the home page (amazon.com.br)
@@ -42,4 +43,19 @@ Click on the search button
 Verifies the "${PRODUCT_NAME}" is displayed on the research list
     Wait Until Page Contains    text=${PRODUCT_NAME}
 
+# GHERKING
+Given that I am on the home page (amazon.com.br)
+    Access the home page (amazon.com.br)
+
+When I go to the menu "Eletrônicos"
+    Go to the menu "Eletrônicos"
+
+Then the title is displayed as "Eletrônicos e Tecnologia | Amazon.com.br"
+    Verify that the title is displayed as "Eletrônicos e Tecnologia | Amazon.com.br"
+
+And the phrase "Eletrônicos e Tecnologia" is displayed 
+    Verify the phrase "Eletrônicos e Tecnologia"
+
+And the category "Computadores e Informática" is displayed
+    Verify that the category "Computadores e Informática" is displayed
     
