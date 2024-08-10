@@ -3,7 +3,10 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}    http://www.amazon.com.br
-${MENU_ELECTRONICS}    //a[@href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&node=16209062011&ref_=nav_cs_electronics'][contains(.,'Eletrônicos')]
+${MENU_ELECTRONICS}   //a[@href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&node=16209062011&ref_=nav_cs_electronics'][contains(.,'Eletrônicos')]
+${SEARCH_INPUT}      //input[contains(@type,'text')]
+${SEARCH_BUTTON}     //input[contains(@type,'submit')]
+${LIST_PRODUCTS}     //span[contains(@data-component-type,'s-search-results')]
 
 *** Keywords ***
 Open the browser
@@ -12,7 +15,7 @@ Open the browser
 
 Close the browser
     Close Browser
-
+# Test Case 01
 Access the home page (amazon.com.br)
     Go To    url=${URL}
     Wait Until Element Is Visible    locator=${MENU_ELECTRONICS}
@@ -28,5 +31,15 @@ Verify the phrase "${PHRASE}"
 
 Verify that the category "${CATEGORY_NAME}" is displayed
     Element Should Be Visible    locator=//a[@aria-label='${CATEGORY_NAME}']
-    
+
+# Test Case 02
+Type the product name "${PRODUCT_NAME}" in the search field
+    Input Text       locator=${SEARCH_INPUT}    text=${PRODUCT_NAME}
+
+Click on the search button
+    Click Element    locator=${SEARCH_BUTTON}
+
+Verifies the "${PRODUCT_NAME}" is displayed on the research list
+    Wait Until Page Contains    text=${PRODUCT_NAME}
+
     
