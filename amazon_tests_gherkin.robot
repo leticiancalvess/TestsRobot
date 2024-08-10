@@ -14,10 +14,10 @@ Test Case 01 - Access the electronics menu
     And the phrase "Eletrônicos e Tecnologia" is displayed 
     And the category "Computadores e Informática" is displayed
 
-# Test Case 02 - Search for a product
-#     [Documentation]    Verifies it's possible to search a product 
-#     [Tags]             search_products    search_list
-#     Access the home page (amazon.com.br)
-#     Type the product name "Echo Dot" in the search field
-#     Click on the search button
-#     Verifies the "Echo Dot" is displayed on the research list
+Test Case 02 - Search for a product
+    [Documentation]    Verifies it's possible to search a product 
+    [Tags]             search_products    search_list
+    Given that I am on the home page (amazon.com.br)
+    When I type the product name "Echo Dot" in the search field
+    And click on the search button
+    Then the "Echo Dot" is displayed on the research list

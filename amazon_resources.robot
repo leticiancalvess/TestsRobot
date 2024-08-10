@@ -58,4 +58,12 @@ And the phrase "Eletrônicos e Tecnologia" is displayed
 
 And the category "Computadores e Informática" is displayed
     Verify that the category "Computadores e Informática" is displayed
-    
+
+When I type the product name "Echo Dot" in the search field
+    Type the product name "Echo Dot" in the search field
+
+And click on the search button
+    Click on the search button
+
+Then the "Echo Dot" is displayed on the research list
+    Verifies the "Echo Dot" is displayed on the research list
